@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    table, th, td {
+      border: 3px solid rgb(0, 0, 0);
+      border-collapse: collapse;
+    }
+    </style>
+    </head>
+    <body>
+  <style>
+    .redtext {
+      color: red;
+    }
+    </style>
+  
+  <style>
+    tr:hover {background-color: #ffff99;}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/style.css">
+
+<title>Lista de Chamados</title>
+</head>
+<body>
+  <style>
+    body{
+    background-color: rgb(202, 213, 247);
+  }
+  </style>
+  
+  </style>
+  
+  
+    <style>
+      div.a {
+        text-align: center;
+      }
+      </style>
+      
+      <div class="a">
+      <br></br>
+        <h1><b><font face="Arial Narrow">Lista de Chamados</font></b></h1>
+        <br><b><a href="/homeTelaInicial">Início</a></b></br>
+        
+      </div>
+      <br></br>
+      
+      <table class="table">
+        <thead>
+          
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Data</th>
+            <th scope="col">Título</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Histórico</th>
+            <th scope="col">Ação</th>
+            <th scope="col">Status</th>
+                        
+          </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="chamado: ${chamados}" data>
+                <td data-th-text="${chamado.id}"></td>
+                <td data-th-text="${chamado.data}"></td>
+                <td data-th-text="${chamado.titulo}"></td>
+                <td data-th-text="${chamado.descricao}"></td>
+                
+                <td><a th:href="@{'/historico/'+${chamado.id}}">Adicione</a></td>
+                
+                <td><a th:href="@{'/excluirChamado/'+${chamado.id}}"<p class="redtext">Excluir</p></a></td>
+                 
+                <td>
+                    <div th:if="${chamado.Status == false}">
+                      <a class="btn">Pendente</a>
+                    </div>
+                    <div th:if="${chamado.Status == true}">
+                      <a class="btn">Resolvido</a>
+                    </div>
+                 </td>
+                 
+            </tr>              
+        </tbody>        
+      </table>  
+    </div>    
+      <a href="/homeChamado"><b>Cadastrar</b></a>
+      <p><b><a href="/dadosCadastrais">Dados cadastrais</a></p>
+       
+</body>
+</html>

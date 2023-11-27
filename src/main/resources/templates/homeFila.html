@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+   rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<title>Cadastro de Fila</title>
+</head>
+  <body>
+    <style>
+      body{
+      background-color: rgb(202, 213, 247);
+    }
+    </style>
+    <style>
+      div.a {
+        text-align: center;
+      }
+      </style>
+      
+      <div class="a">
+  <br>
+      <h1><b><font face="Arial Narrow">Cadastro de Filas</font></b></h1>
+      <br><b><a href="/dadosCadastrais">Dados cadastrais</a>
+        
+    </div>
+    <br></br>
+  
+<form method="POST" action="/homeFila">
+    <div th:if="${fila}">
+        <input type="hidden" name="id" th:value="${chamado?.id}">
+    </div>
+    <div class="form-group" >
+      <label for="formGroupExampleInput">Descrição</label>
+      <p></p>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="descricao" th:value="${fila?.descricao}">
+    </div>
+    
+      </th:block>
+      <p></p>  
+    <div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <br></div>
+      <br><b><a href="/homeTelaInicial">Início</a></b></br>
+      
+    </div>
+  </form>
+  </body>
+</html>

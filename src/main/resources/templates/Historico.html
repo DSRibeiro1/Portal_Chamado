@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+   rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<title>Histórico de Chamado</title>
+</head>
+<body>
+  <style>
+    body{
+    background-color: rgb(202, 213, 247);
+  }
+  </style>
+  
+  <style>
+    div.a {
+      text-align: center;
+    }
+    </style>
+    
+    <div class="a">
+      <br>
+    <h1><b><font face="Arial Narrow">Histórico de Chamado</font></b></h1>
+    <br><b><a href="/dadosCadastrais">Dados cadastrais</a>
+    
+  </div>
+</br>
+
+<form method="POST" action="/Historico">
+    <div th:if="${chamado}">
+        <input type="text" name="id" th:value="${chamado?.id}">
+    </div>
+       
+          <form>
+            <div>
+            <label>Histórico</label>
+            
+            <br><textarea placeholder="Digite sua mensagem" name="historico" minlength="20" maxlength="50" 
+             rows=10 cols=183></textarea></br>
+
+           
+
+                          
+             <br><button type="submit" class="btn btn-primary">Finalizar</button></br>
+                <br><b><a href="/homeTelaInicial">Início</a></b></br>
+            
+            </form>
+        </div>
+  </body>
+</html>
